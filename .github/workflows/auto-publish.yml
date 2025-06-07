@@ -33,13 +33,16 @@ jobs:
           echo "exists=false" >> "$GITHUB_OUTPUT"
         fi
 
-    - name: Create Git tag
-      if: steps.check_tag.outputs.exists == 'false'
+    - name: Configure Git
       run: |
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
+
+    - name: Create and push tag with PAT
+      if: steps.check_tag.outputs.exists == 'false'
+      run: |
         git tag "v${{ steps.get_version.outputs.version }}"
-        git push origin "v${{ steps.get_version.outputs.version }}"
+        git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/xx025/easyfont.git "v${{ steps.get_version.outputs.version }}"
 
     - name: Create GitHub Release
       if: steps.check_tag.outputs.exists == 'false'
@@ -48,6 +51,6 @@ jobs:
         tag_name: "v${{ steps.get_version.outputs.version }}"
         name: "Release v${{ steps.get_version.outputs.version }}"
         body: |
-          auto publish：v${{ steps.get_version.outputs.version }}
+          Auto Pbulish：v${{ steps.get_version.outputs.version }}
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
