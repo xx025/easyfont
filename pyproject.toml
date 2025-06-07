@@ -1,7 +1,8 @@
 [project]
 name = "easyfont"
 version = "0.1.0"
-description = "Add your description here"
+author = "xx025"
+description = "A simple font library for Python, designed to make working with fonts easy and intuitive."
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
