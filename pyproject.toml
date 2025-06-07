@@ -1,7 +1,9 @@
 [project]
 name = "easyfont"
 version = "0.1.0"
-author = "xx025"
+authors = [
+  { name = "ferretsprite", email = "ferret-sprite-goon@duck.com" }
+]
 description = "A simple font library for Python, designed to make working with fonts easy and intuitive."
 readme = "README.md"
 requires-python = ">=3.8"
