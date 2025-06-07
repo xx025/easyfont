@@ -38,11 +38,16 @@ jobs:
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
 
-    - name: Create and push tag with PAT
+    - name: Reset remote with PAT
+      run: |
+        git remote remove origin
+        git remote add origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/xx025/easyfont.git
+
+    - name: Create and push tag
       if: steps.check_tag.outputs.exists == 'false'
       run: |
         git tag "v${{ steps.get_version.outputs.version }}"
-        git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/xx025/easyfont.git "v${{ steps.get_version.outputs.version }}"
+        git push origin "v${{ steps.get_version.outputs.version }}"
 
     - name: Create GitHub Release
       if: steps.check_tag.outputs.exists == 'false'
@@ -51,6 +56,6 @@ jobs:
         tag_name: "v${{ steps.get_version.outputs.version }}"
         name: "Release v${{ steps.get_version.outputs.version }}"
         body: |
-          Auto Pbulish：v${{ steps.get_version.outputs.version }}
+          Auto Publish: v${{ steps.get_version.outputs.version }}
       env:
         GITHUB_TOKEN: ${{ secrets.GH_PAT }}
