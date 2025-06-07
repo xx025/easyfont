@@ -1,6 +1,6 @@
 [project]
 name = "easyfont"
-version = "0.0.1-3"
+version = "0.0.1-4"
 authors = [
   { name = "ferretsprite", email = "ferret-sprite-goon@duck.com" }
 ]
