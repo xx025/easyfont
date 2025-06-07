@@ -5,6 +5,9 @@ on:
     paths:
       - "pyproject.toml"
 
+permissions:
+  contents: write   # 给 workflow 写权限
+
 jobs:
   tag-and-release:
     runs-on: ubuntu-latest
@@ -38,10 +41,9 @@ jobs:
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
 
-    - name: Reset remote with PAT
+    - name: Set remote URL with PAT
       run: |
-        git remote remove origin
-        git remote add origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/xx025/easyfont.git
+        git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/xx025/easyfont.git
 
     - name: Create and push tag
       if: steps.check_tag.outputs.exists == 'false'
