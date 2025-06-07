@@ -1,4 +1,4 @@
-from .core import get_font
-from .types import FontConfig
+from ._core import get_font
+from ._types import FontConfig,Lang
 
-__all__ = ["get_font", "FontConfig"]
+__all__ = ["get_font", "FontConfig", "Lang"]

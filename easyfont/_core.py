@@ -1,7 +1,7 @@
 import warnings
 from functools import lru_cache
 
-from .types import Lang, Font, _FONT_LANG_SUPPORT, FontName, FontConfig, DEFAULT_FONT, _FONT_LIBRARY
+from ._types import Lang, Font, _FONT_LANG_SUPPORT, FontName, FontConfig, DEFAULT_FONT, _FONT_LIBRARY
 
 try:
     from importlib.resources import files

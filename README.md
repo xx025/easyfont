@@ -1,26 +1,38 @@
-
 # easyfont
 
 
-A simple font library for Python, designed to make working with fonts easy and intuitive.
+**One line of code, your ideal font is ready — EasyFont.**
 
 
 
-Usage
+**Install**
+
+```bash
+pip install easyfont
+```
+
+
+**Usage**
+
 
 ```python
-from easyfont.types import Lang
+from easyfont import Lang, FontConfig
+from easyfont import get_font
 
 
 def main():
-    from easyfont import get_font
+    print("Hello from easyfont!")
+
     print(get_font())
-    print(get_font(lang=[Lang.EN_US]))
+    print(get_font(lang=Lang.EN_US))
     print(get_font(lang=[Lang.EN_US, Lang.ZH_TW]))
-    print(get_font(lang=[Lang.EN_US, Lang.ZH_CN]))
+    print(get_font(lang=[Lang.EN_US, Lang.ZH_CN, Lang.ZH_TW]))
+
+    cfg= FontConfig(lang=Lang.EN_US)
+    print(get_font(cfg=cfg))
 
 
 if __name__ == "__main__":
     main()
-    
+
 ```
