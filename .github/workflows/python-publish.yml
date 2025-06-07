@@ -20,7 +20,7 @@ jobs:
 
       - name: Build the package
         run: |
-          uv pip install -r requirements.txt  # 如果你需要
+          uv sync
           uv build
 
       - name: Publish to PyPI
