@@ -4,7 +4,7 @@ version = "0.0.1-3"
 authors = [
   { name = "ferretsprite", email = "ferret-sprite-goon@duck.com" }
 ]
-description = "A simple font library for Python, designed to make working with fonts easy and intuitive."
+description = "One line of code, your ideal font is ready — EasyFont."
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
