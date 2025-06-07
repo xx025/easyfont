@@ -12,5 +12,9 @@ __all__ = [
 ]
 
 
-def __version__():
-    return "0.0.1-5"
+from importlib.metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version("easyfont")
+except PackageNotFoundError:
+    __version__ = "unknown"
