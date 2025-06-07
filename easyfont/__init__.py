@@ -1,8 +1,16 @@
-from ._core import get_font
-from ._types import FontConfig,Lang
+from ._core import getfont
+from ._types import FontConfig, Lang
 
-__all__ = ["get_font", "FontConfig", "Lang"]
+get_font = getfont
+
+__all__ = [
+    "getfont",
+    "get_font",
+    "FontConfig",
+    "Lang",
+
+]
 
 
 def __version__():
-    return "0.0.1-4"
+    return "0.0.1-5"

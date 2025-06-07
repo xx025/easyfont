@@ -59,7 +59,7 @@ def load_font(cfg: FontConfig, fallback: bool = True) -> Font:
                 raise ValueError("No font name or language provided, and fallback is disabled.")
 
 
-def get_font(cfg: FontConfig = None, as_obj: bool = False, fallback: bool = True, **kwargs) -> Union[str, Font]:
+def getfont(cfg: FontConfig = None, as_obj: bool = False, fallback: bool = True, **kwargs) -> Union[str, Font]:
     if cfg is not None and kwargs:
         warnings.warn("Both cfg and kwargs provided; kwargs will be ignored.", UserWarning)
 
