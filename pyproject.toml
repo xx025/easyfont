@@ -1,6 +1,6 @@
 [project]
 name = "easyfont"
-version = "0.0.1-2"
+version = "0.0.1-3"
 authors = [
   { name = "ferretsprite", email = "ferret-sprite-goon@duck.com" }
 ]
@@ -11,6 +11,9 @@ dependencies = [
     "importlib-resources>=6.4.5",
 ]
 
+homepage = "https://github.com/xx025/easyfont"
+repository = "https://github.com/xx025/easyfont"
+documentation = "https://github.com/xx025/easyfont#readme"
 
 [tool.uv]
 index-url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
